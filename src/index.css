@@ -1,0 +1,418 @@
+Base Styles
+body { 
+  margin: 0; 
+  background-color: #f8fafc; 
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+  color: #1e293b;
+}
+
+.desktop-wrapper { 
+  width: 1000px; 
+  margin: 40px auto; 
+}
+
+/* Dashboard Container */
+.dashboard, .quiz-view { 
+  background: white; 
+  padding: 40px; 
+  border-radius: 2rem; 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+  border: 1px solid #e2e8f0; 
+}
+
+/* Header & Typography */
+.main-header { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 30px; 
+}
+
+.logo-text { 
+  color: #4f46e5; 
+  font-weight: 900; 
+  margin: 0; 
+  font-size: 2.2rem;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin: 5px 0 0 0;
+  font-weight: 600;
+}
+
+/* Navigation Tabs */
+.tab-nav { 
+  display: flex; 
+  gap: 20px; 
+  margin-bottom: 30px; 
+  border-bottom: 2px solid #f1f5f9; 
+}
+
+.tab-link { 
+  background: none; 
+  border: none; 
+  padding: 10px 0; 
+  font-size: 1rem;
+  font-weight: 700; 
+  color: #94a3b8; 
+  cursor: pointer; 
+  transition: 0.2s;
+}
+
+.tab-link.active { 
+  color: #4f46e5; 
+  border-bottom: 3px solid #4f46e5; 
+}
+
+/* Character Grid */
+.character-grid { 
+  display: grid; 
+  grid-template-columns: repeat(10, 1fr); 
+  gap: 12px; 
+}
+
+.modern-card { 
+  height: 100px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  border: 2px solid #f1f5f9; 
+  border-radius: 1rem; 
+  cursor: pointer; 
+  transition: all 0.2s ease;
+  background: white;
+}
+
+.modern-card:hover { 
+  border-color: #4f46e5; 
+  transform: translateY(-4px); 
+  box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.1);
+}
+
+.char-symbol { 
+  font-size: 2rem; 
+  font-weight: 800; 
+  color: #1e293b;
+}
+
+.char-reading { 
+  font-size: 0.8rem; 
+  color: #6366f1; 
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Modal System */
+.modal-overlay { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(15, 23, 42, 0.7); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  backdrop-filter: blur(8px); 
+  z-index: 100; 
+}
+
+.modal-content { 
+  background: white; 
+  width: 480px; 
+  padding: 40px; 
+  border-radius: 2.5rem; 
+  position: relative; 
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.close-btn { 
+  position: absolute; 
+  top: 25px; 
+  right: 25px; 
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: none;
+  color: #64748b;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+.modal-char-large { 
+  font-size: 10rem; 
+  font-weight: 900; 
+  text-align: center; 
+  margin: 10px 0; 
+  color: #1e293b;
+}
+
+.text-indigo { color: #4f46e5; }
+
+.badge-tag {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.meaning-highlight { 
+  background: #fdf2f8; 
+  color: #be185d; 
+  padding: 15px; 
+  border-radius: 1rem; 
+  margin: 20px 0; 
+  font-weight: 700; 
+  border: 1px solid #fbcfe8;
+  text-align: left;
+}
+
+.mnemonic-section { 
+  background: #fffbeb; 
+  padding: 20px; 
+  border-radius: 1.2rem; 
+  border-left: 6px solid #f59e0b; 
+  color: #92400e;
+  text-align: left;
+}
+
+/* Quiz Interface */
+.quiz-view {
+  min-height: 400px;
+}
+
+.big-char { 
+  font-size: 9rem; 
+  font-weight: 900; 
+  text-align: center; 
+  margin: 40px 0; 
+  color: #1e293b;
+}
+
+.modern-input { 
+  width: 100%; 
+  padding: 20px; 
+  font-size: 2rem; 
+  border: 4px solid #e2e8f0; 
+  border-radius: 1.5rem; 
+  text-align: center; 
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.modern-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+}
+
+.feedback-text { 
+  height: 40px; 
+  margin: 15px 0; 
+  font-weight: 800; 
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.feedback-text.success { color: #10b981; }
+.feedback-text.error { color: #ef4444; }
+
+/* Buttons */
+.start-quiz-btn { 
+  background: #4f46e5; 
+  color: white; 
+  border: none; 
+  padding: 12px 28px; 
+  border-radius: 1rem; 
+  font-weight: 800; 
+  cursor: pointer; 
+  transition: 0.2s;
+}
+
+.master-quiz-btn { 
+  background: #1e293b; 
+  color: white; 
+  border: none; 
+  padding: 12px 28px; 
+  border-radius: 1rem; 
+  font-weight: 800; 
+  cursor: pointer; 
+  transition: 0.2s;
+}
+
+.submit-answer { 
+  width: 100%; 
+  padding: 18px; 
+  background: #10b981; 
+  color: white; 
+  border: none; 
+  border-radius: 1.2rem; 
+  font-weight: 800; 
+  font-size: 1.1rem; 
+  cursor: pointer; 
+  margin-top: 10px;
+}
+
+.submit-answer:hover { opacity: 0.9; }
+
+.back-link {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.back-link:hover { color: #1e293b; }
+
+/* Add this at the end of your index.css */
+.header-buttons { 
+  display: flex !important; 
+  gap: 15px !important; 
+  align-items: center;
+}
+
+.start-quiz-btn, .master-quiz-btn {
+  margin: 0; /* Ensures no extra margins are pushing them together */
+}
+
+.modal-details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.meaning-highlight {
+  background: #fdf2f8;
+  color: #be185d;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px 0;
+  font-weight: 700;
+  border: 1px solid #fbcfe8;
+}
+
+.mnemonic-section {
+  background: #fffbeb;
+  padding: 15px;
+  border-radius: 12px;
+  border-left: 5px solid #f59e0b;
+  color: #92400e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.badge-tag {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+/* Stroke Order Box styling */
+.stroke-order-box {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px 0;
+  border: 1px dashed #cbd5e1;
+}
+
+.stroke-order-box h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.stroke-order-box ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: #64748b;
+  list-style-type: square;
+}
+
+.hint-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Drawing Animation Effect */
+.stroke-animation {
+  animation: writeEffect 1.5s ease-out;
+  display: inline-block;
+  width: 100%;
+}
+
+@keyframes writeEffect {
+  0% { opacity: 0; transform: scale(0.8) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+/* Layout for the Modal Body */
+.modal-body-split {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.char-display-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #e2e8f0;
+  padding-right: 30px;
+}
+
+.stroke-order-image-container {
+  margin-top: 20px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.small-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.stroke-order-svg {
+  width: 120px;
+  height: 120px;
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%); /* Makes the lines blue/indigo */
+}
+
+/* Adjust modal width to fit the split view */
+.modal-content {
+  width: 650px !important; 
+}
+
