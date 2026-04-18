@@ -1,151 +1,181 @@
 import React, { useState } from 'react';
-import * as wanakana from 'wanakana';
 import { MASTER_DATA } from './JapaneseData';
 import './index.css';
 
 export default function App() {
-  const [view, setView] = useState('dashboard');
+  // --- 1. THEME & TABS STATE ---
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeTab, setActiveTab] = useState('hiragana');
   const [selectedChar, setSelectedChar] = useState(null);
+  
+  // --- 2. QUIZ STATES ---
+  const [isQuizMode, setIsQuizMode] = useState(false);
+  const [quizDeck, setQuizDeck] = useState([]);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [userInput, setUserInput] = useState('');
+  const [feedback, setFeedback] = useState(null);
+  const [score, setScore] = useState(0);
+  const [streak, setStreak] = useState(0);
 
-  // Quiz State
-  const [quizItem, setQuizItem] = useState(null);
-  const [input, setInput] = useState("");
-  const [feedback, setFeedback] = useState("");
+  // --- 3. QUIZ ENGINE ---
+  const startQuiz = (master = false) => {
+    const hData = MASTER_DATA?.hiragana || [];
+    const kData = MASTER_DATA?.katakana || [];
+    const kanjiData = MASTER_DATA?.kanji || [];
 
-  const startQuiz = (mode) => {
-    const pool = mode === 'all' 
-      ? [...MASTER_DATA.hiragana, ...MASTER_DATA.katakana, ...MASTER_DATA.kanji] 
-      : MASTER_DATA[mode];
-    setQuizItem(pool[Math.floor(Math.random() * pool.length)]);
-    setView('quiz');
+    let deck = [];
+    if (master) {
+      deck = [...hData, ...kData, ...kanjiData];
+    } else {
+      deck = MASTER_DATA[activeTab] || [];
+    }
+
+    if (deck.length === 0) {
+      alert(`No data found for ${activeTab}. Check JapaneseData.js!`);
+      return;
+    }
+
+    setQuizDeck([...deck].sort(() => 0.5 - Math.random()).slice(0, 10));
+    setCurrentIdx(0);
+    setScore(0);
+    setStreak(0);
+    setIsQuizMode(true);
+    setUserInput('');
   };
 
-  const checkAnswer = (e) => {
+  const handleQuizSubmit = (e) => {
     e.preventDefault();
-    const isCorrect = input.toLowerCase().trim() === quizItem.romaji || 
-                      wanakana.toKana(input) === quizItem.char;
+    if (!quizDeck[currentIdx]) return;
+
+    const current = quizDeck[currentIdx];
+    const correct = (current.romaji || "").toLowerCase().trim();
     
-    if (isCorrect) {
-      setFeedback("✅ Correct!");
+    if (userInput.toLowerCase().trim() === correct) {
+      setFeedback('correct');
+      setScore(s => s + 10);
+      setStreak(s => s + 1);
       setTimeout(() => {
-        const pool = activeTab === 'all' 
-          ? [...MASTER_DATA.hiragana, ...MASTER_DATA.katakana, ...MASTER_DATA.kanji] 
-          : MASTER_DATA[activeTab];
-        setQuizItem(pool[Math.floor(Math.random() * pool.length)]);
-        setInput("");
-        setFeedback("");
-      }, 800);
+        if (currentIdx < quizDeck.length - 1) {
+          setCurrentIdx(prev => prev + 1);
+          setUserInput('');
+          setFeedback(null);
+        } else {
+          setIsQuizMode(false);
+          alert(`Mastery Complete! Final Score: ${score + 10}`);
+        }
+      }, 600);
     } else {
-      setFeedback("❌ Try again");
+      setFeedback('wrong');
+      setStreak(0);
+      setTimeout(() => setFeedback(null), 800);
     }
   };
 
+  // --- 4. RENDER LOGIC ---
   return (
-    <div className="desktop-wrapper">
-      {view === 'dashboard' ? (
-        <div className="dashboard">
+    <div className={isDarkMode ? 'dark-theme' : 'light-theme'}>
+      {/* Main Background Wrapper 
+          Ensure min-height: 100vh is set in CSS for .light-theme/.dark-theme 
+      */}
+      <div className="app-main-bg">
+        <div className="desktop-wrapper">
+          
+          {/* HEADER */}
           <header className="main-header">
-            <div>
-              <h1 className="logo-text">NIHONGO DASH</h1>
-              <p>Studying: {activeTab.toUpperCase()}</p>
-            </div>
-            <div className="header-buttons">
-              <button className="start-quiz-btn" onClick={() => startQuiz(activeTab)}>
-                QUIZ {activeTab.toUpperCase()}
+            <h1 className="logo-text">NIHONGO DASH</h1>
+            <div className="header-actions">
+              <button className="action-btn" onClick={() => setIsDarkMode(!isDarkMode)}>
+                {isDarkMode ? '☀️ LIGHT' : '🌙 DARK'}
               </button>
-              <button className="master-quiz-btn" onClick={() => { setActiveTab('all'); startQuiz('all'); }}>
-                MASTER QUIZ
-              </button>
+              <button className="action-btn" onClick={() => startQuiz(false)}>QUIZ</button>
+              <button className="action-btn master" onClick={() => startQuiz(true)}>MASTER ALL</button>
             </div>
           </header>
 
-          <nav className="tab-nav">
-            {['hiragana', 'katakana', 'kanji'].map(tab => (
-              <button 
-                key={tab} 
-                className={`tab-link ${activeTab === tab ? 'active' : ''}`} 
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab.toUpperCase()}
-              </button>
-            ))}
-          </nav>
-
-          <main className="character-grid">
-            {MASTER_DATA[activeTab === 'all' ? 'hiragana' : activeTab].map((item, i) => (
-              <div key={i} className="modern-card" onClick={() => setSelectedChar({...item, type: activeTab})}>
-                <span className="char-symbol">{item.char}</span>
-                <span className="char-reading">{item.romaji}</span>
+          {/* QUIZ MODE MODAL */}
+          {isQuizMode && (
+            <div className="modal-overlay">
+              <div className={`quiz-container ${feedback}`}>
+                <button className="close-btn" onClick={() => setIsQuizMode(false)}>×</button>
+                <div className="quiz-stats">
+                  <span>Question: <b>{currentIdx + 1}/{quizDeck.length}</b></span>
+                  <span>Score: <b>{score}</b></span>
+                  <span>Streak: 🔥<b>{streak}</b></span>
+                </div>
+                <div className="progress-bar-bg">
+                  <div className="progress-fill" style={{width: `${((currentIdx + 1) / quizDeck.length) * 100}%`}}></div>
+                </div>
+                <div className="quiz-content">
+                  <div className="quiz-char-large">{quizDeck[currentIdx]?.char}</div>
+                  <p className="quiz-hint">What is the reading?</p>
+                  <form onSubmit={handleQuizSubmit}>
+                    <input 
+                      key={currentIdx} // Auto-focus resets on new questions
+                      autoFocus 
+                      className="quiz-input-field" 
+                      value={userInput} 
+                      onChange={e => setUserInput(e.target.value)} 
+                      placeholder="..." 
+                    />
+                  </form>
+                </div>
               </div>
-            ))}
-          </main>
-
-{/* char data */}
-
-        {selectedChar && (
-  <div className="modal-overlay" onClick={() => setSelectedChar(null)}>
-    <div className="modal-content" onClick={e => e.stopPropagation()}>
-      <button className="close-btn" onClick={() => setSelectedChar(null)}>×</button>
-      
-      <div className="modal-body-split">
-        {/* LEFT SIDE: Large Character & Stroke Order Image */}
-        <div className="char-display-section">
-          <div className="modal-char-large">{selectedChar.char}</div>
-          
-          <div className="stroke-order-image-container">
-            <p className="small-label">STROKE ORDER</p>
-            {/* This URL fetches the stroke order diagram automatically */}
-            <img 
-              src={`https://raw.githubusercontent.com/KanjiVG/KanjiVG/master/kanji/0${selectedChar.char.charCodeAt(0).toString(16)}.svg`}
-              alt="Stroke Order"
-              className="stroke-order-svg"
-              onError={(e) => e.target.style.display = 'none'} 
-            />
-          </div>
-        </div>
-
-        {/* RIGHT SIDE: Meaning & Mnemonics */}
-        <div className="modal-details">
-          <span className="badge-tag">{selectedChar.type}</span>
-          <h2>Reading: <span className="text-indigo">{selectedChar.romaji}</span></h2>
-          
-          {selectedChar.meaning && (
-            <div className="meaning-highlight">
-              <strong>MEANING:</strong> {selectedChar.meaning}
             </div>
           )}
 
-          <div className="mnemonic-section">
-            <h4>💡 Mnemonic:</h4>
-            <p>{selectedChar.mnemonic || `Follow the strokes to write "${selectedChar.char}" correctly.`}</p>
-          </div>
+          {/* DASHBOARD CONTENT */}
+          {!isQuizMode && (
+            <>
+              <nav className="tab-nav">
+                {['hiragana', 'katakana', 'kanji'].map(t => (
+                  <button 
+                    key={t} 
+                    className={`tab-link ${activeTab === t ? 'active' : ''}`} 
+                    onClick={() => setActiveTab(t)}
+                  >
+                    {t.toUpperCase()}
+                  </button>
+                ))}
+              </nav>
+
+              <main className="character-grid">
+                {(MASTER_DATA[activeTab] || []).map((item, i) => (
+                  <div key={i} className="modern-card" onClick={() => setSelectedChar(item)}>
+                    <span className="char-symbol">{item.char}</span>
+                    <span className="char-reading">{item.romaji}</span>
+                  </div>
+                ))}
+              </main>
+            </>
+          )}
+
+          {/* CHARACTER MODAL (Split View) */}
+          {selectedChar && (
+            <div className="modal-overlay" onClick={() => setSelectedChar(null)}>
+              <div className="modal-content-split" onClick={e => e.stopPropagation()}>
+                <button className="close-btn" onClick={() => setSelectedChar(null)}>×</button>
+                <div className="modal-left">
+                  <div className="modal-char-huge">{selectedChar.char}</div>
+                  <div className="stroke-label">STROKE ORDER</div>
+                  <img 
+                    className="stroke-img" 
+                    src={`https://raw.githubusercontent.com/KanjiVG/KanjiVG/master/kanji/0${selectedChar.char.charCodeAt(0).toString(16)}.svg`} 
+                    alt="stroke" 
+                  />
+                </div>
+                <div className="modal-right">
+                  <span className="badge-tag">{activeTab.toUpperCase()}</span>
+                  <h2 className="modal-meaning">{selectedChar.meaning || selectedChar.romaji}</h2>
+                  <div className="mnemonic-box">
+                    <h4>💡 MNEMONIC</h4>
+                    <p>{selectedChar.mnemonic || "No mnemonic data available."}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    </div>
-  </div>
-)}
-{/*  */}
-        </div>
-      ) : (
-        <div className="quiz-view">
-          <button className="back-link" onClick={() => setView('dashboard')}>← EXIT</button>
-          <div className="quiz-display">
-            <div className="big-char">{quizItem?.char}</div>
-            <form onSubmit={checkAnswer}>
-              <input 
-                autoFocus 
-                className="modern-input" 
-                value={input} 
-                onChange={e => setInput(e.target.value)} 
-                placeholder="Type answer..." 
-              />
-              <div className="feedback-text">{feedback}</div>
-              <button type="submit" className="submit-answer">VERIFY</button>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

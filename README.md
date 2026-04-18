@@ -1,16 +1,36 @@
-# React + Vite
+🏯 NIHONGO DASH (日本語ダッシュ)
+I built this because I found most Japanese learning apps either too cluttered or too slow. I wanted a clean, "no-nonsense" dashboard where I could switch between Hiragana and Kanji instantly and test myself without 50 extra clicks.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🛠 Why I built this
+When I started learning, I kept forgetting the stroke order and the "why" behind the shapes. I built this app to solve three problems:
 
-Currently, two official plugins are available:
+The "Everything at Once" Problem: Most quizzes mix everything. Mine lets you focus on one tab at a time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Visual Memory: Every character has a mnemonic (memory aid) right next to its stroke order.
 
-## React Compiler
+Speed: Using the Wanakana library, you can type your answers naturally, and the app handles the conversion.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+📸 What it looks like
+(Pro-tip: Drop a screenshot of your split-view modal here!)
 
-## Expanding the ESLint configuration
+🧩 The Cool Parts
+The Smart Filter: The quiz logic checks which tab you're currently viewing and builds a custom deck on the fly. No manual setup needed.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+KanjiVG Integration: I’m pulling live SVG data for stroke orders so you can see exactly how to draw the characters, not just a static image.
+
+Master Mode: For when you're feeling brave—combines all 142 characters into one session.
+
+🏗 Setup
+If you want to play with the code:
+
+npm install
+
+npm start
+Note: Make sure you have wanakana installed, as that handles the input magic.
+
+🗺 Roadmap / Future Plans
+[ ] Add "Dark Mode" for late-night study sessions.
+
+[ ] Track "Wrong Answer" streaks to show users which characters they struggle with most.
+
+[ ] Add audio pronunciation clips.
