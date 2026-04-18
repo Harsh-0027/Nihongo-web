@@ -88,7 +88,7 @@ export default function App() {
           
           {/* HEADER */}
           <header className="main-header">
-            <h1 className="logo-text">NIHONGO </h1>
+            <h1 className="logo-text">NIHONGO DESU</h1>
             <div className="header-actions">
               <button className="action-btn" onClick={() => setIsDarkMode(!isDarkMode)}>
                 {isDarkMode ? '☀️ LIGHT' : '🌙 DARK'}
@@ -185,14 +185,47 @@ export default function App() {
                 </div>
               )}
 
-              <main className="character-grid">
-                {displayList.map((item, i) => (
-                  <div key={i} className="modern-card" onClick={() => setSelectedChar(item)}>
-                    <span className="char-symbol">{item.char}</span>
-                    <span className="char-reading">{item.romaji}</span>
-                  </div>
-                ))}
-              </main>
+<main className="dashboard-content">
+  {/* If searching, show a simple flat grid */}
+  {searchTerm ? (
+    <div className="character-grid">
+      {displayList.length > 0 ? (
+        displayList.map((item, i) => (
+          <div key={i} className="modern-card" onClick={() => setSelectedChar(item)}>
+            <span className="char-symbol">{item.char}</span>
+            <span className="char-reading">{item.romaji}</span>
+          </div>
+        ))
+      ) : (
+        <p className="no-results">No characters found for "{searchTerm}"</p>
+      )}
+    </div>
+  ) : (
+    /* Grouping Logic for when NOT searching */
+    Object.entries(
+      (displayList || []).reduce((acc, item) => {
+        // Fallback to 'General' if category is missing to prevent crash
+        const cat = item.category || "General"; 
+        if (!acc[cat]) acc[cat] = [];
+        acc[cat].push(item);
+        return acc;
+      }, {})
+    ).map(([category, items]) => (
+      <section key={category} className="category-section">
+        <h3 className="section-title">{category.toUpperCase()}</h3>
+        <div className="character-grid">
+          {items.map((item, i) => (
+            <div key={i} className="modern-card" onClick={() => setSelectedChar(item)}>
+              <span className="char-symbol">{item.char}</span>
+              <span className="char-reading">{item.romaji}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    ))
+  )}
+</main>
+
             </>
           )}
 
