@@ -1,99 +1,287 @@
 export const MASTER_DATA = {
-  hiragana: [
-    { char: "あ", romaji: "a", mnemonic: "Looks like an 'Apple' with a stem." },
-    { char: "い", romaji: "i", mnemonic: "Two 'i's standing side by side." },
-    { char: "う", romaji: "u", mnemonic: "Side profile of someone saying 'Ugh!'" },
-    { char: "え", romaji: "e", mnemonic: "An 'Exotic' bird on a branch." },
-    { char: "お", romaji: "o", mnemonic: "A golfer hitting a ball 'On'to the green." },
-    { char: "か", romaji: "ka", mnemonic: "A 'Ka'yak paddle hitting the water." },
-    { char: "き", romaji: "ki", mnemonic: "It looks just like a 'Key'." },
-    { char: "く", romaji: "ku", mnemonic: "The open beak of a 'Cu'ckoo bird." },
-    { char: "け", romaji: "ke", mnemonic: "A 'Ke'g of cider." },
-    { char: "こ", romaji: "ko", mnemonic: "Two 'Co'habitating worms." },
-    { char: "さ", romaji: "sa", mnemonic: "A 'Sa'iling boat on the sea." },
-    { char: "し", romaji: "shi", mnemonic: "A 'She'll' (hook) for fishing." },
-    { char: "す", romaji: "su", mnemonic: "A 'Su'per swing set." },
-    { char: "せ", romaji: "se", mnemonic: "Two people 'Se'tting' on a bench." },
-    { char: "そ", romaji: "so", mnemonic: "A 'So'ngbird on a perch." },
-    { char: "た", romaji: "ta", mnemonic: "The letters 't' and 'a' combined." },
-    { char: "ち", romaji: "chi", mnemonic: "A 'Chee'rleader waving pom-poms." },
-    { char: "つ", romaji: "tsu", mnemonic: "A big 'Tsu'nami wave." },
-    { char: "て", romaji: "te", mnemonic: "A 'Te'n' (10) tilted over." },
-    { char: "と", romaji: "to", mnemonic: "A 'To'e with a splinter in it." },
-    { char: "な", romaji: "na", mnemonic: "A 'Nu'n praying in front of a cross." },
-    { char: "に", romaji: "ni", mnemonic: "A 'Knee' with a bandage on it." },
-    { char: "ぬ", romaji: "nu", mnemonic: "A plate of 'Noo'dles with chopsticks." },
-    { char: "ね", romaji: "ne", mnemonic: "A 'Ne'lly' (cat) with a curly tail." },
-    { char: "の", romaji: "no", mnemonic: "A 'No' entry sign." },
-    { char: "は", romaji: "ha", mnemonic: "A 'Ha'ha! (funny) person laughing." },
-    { char: "ひ", romaji: "hi", mnemonic: "A big 'Hi'p smile." },
-    { char: "ふ", romaji: "fu", mnemonic: "Mount 'Fu'ji's snowy peak." },
-    { char: "へ", romaji: "he", mnemonic: "A 'He'll' (hill) to climb." },
-    { char: "ほ", romaji: "ho", mnemonic: "A 'Ho't' stove with a flame." },
-    { char: "ま", romaji: "ma", mnemonic: "A 'Ma'st' on a ship." },
-    { char: "み", romaji: "mi", mnemonic: "Who is 21? 'Me'!" },
-    { char: "む", romaji: "mu", mnemonic: "A 'Moo'ing cow." },
-    { char: "め", romaji: "me", mnemonic: "A 'Me'ssy' plate of noodles." },
-    { char: "も", romaji: "mo", mnemonic: "A 'Mo're' (more) fish on a hook." },
-    { char: "や", romaji: "ya", mnemonic: "A 'Ya'cht' on the water." },
-    { char: "ゆ", romaji: "yu", mnemonic: "A 'U'-turn symbol." },
-    { char: "よ", romaji: "yo", mnemonic: "A 'Yo'-yo on a string." },
-    { char: "ら", romaji: "ra", mnemonic: "A 'Ra'bbit' sitting down." },
-    { char: "り", romaji: "ri", mnemonic: "Two stalks of 'Ree'ds." },
-    { char: "る", romaji: "ru", mnemonic: "A 'Rou'te' with a loop-de-loop." },
-    { char: "れ", romaji: "re", mnemonic: "A person 'Re'aching' for something." },
-    { char: "ろ", romaji: "ro", mnemonic: "A 'Ro'ad' with no end." },
-    { char: "わ", romaji: "wa", mnemonic: "A 'Wa'sp' flying by." },
-    { char: "を", romaji: "wo", mnemonic: "Someone 'Wo'lking' on a tightrope." },
-    { char: "ん", romaji: "n", mnemonic: "The letter 'n' cursive." }
+  
+vocabulary: [
+{char:"おはよう",romaji:"ohayou",meaning:"Good Morning",mnemonic:"Morning sun rises over OHIO"},
+{char:"こんにちは",romaji:"konnichiwa",meaning:"Hello",mnemonic:"Continue (CON-NICHI) your day happily"},
+{char:"こんばんは",romaji:"konbanwa",meaning:"Good Evening",mnemonic:"Band (BAN) plays in evening"},
+{char:"さようなら",romaji:"sayounara",meaning:"Goodbye",mnemonic:"Say-onara when leaving"},
+{char:"ありがとう",romaji:"arigatou",meaning:"Thank You",mnemonic:"Alligator (ARI-GATO) says thanks"},
+
+{char:"としょかん",romaji:"toshokan",meaning:"Library",mnemonic:"Toe-show not allowed in library"},
+{char:"ぎんこう",romaji:"ginkou",meaning:"Bank",mnemonic:"Gold (GIN) kept in bank"},
+{char:"にほん",romaji:"nihon",meaning:"Japan",mnemonic:"Knee-on map of Japan"},
+{char:"くに",romaji:"kuni",meaning:"Country",mnemonic:"Every KUNI has a flag"},
+
+{char:"でんわ",romaji:"denwa",meaning:"Phone",mnemonic:"Then-what did he say on phone"},
+{char:"とけい",romaji:"tokei",meaning:"Clock",mnemonic:"Toe-kay time to go"},
+{char:"かばん",romaji:"kaban",meaning:"Bag",mnemonic:"Cab-on seat with your bag"},
+{char:"ほん",romaji:"hon",meaning:"Book",mnemonic:"Honey of a book"},
+{char:"しんぶん",romaji:"shinbun",meaning:"Newspaper",mnemonic:"Shiny-bun wrapped in paper"},
+
+{char:"なつ",romaji:"natsu",meaning:"Summer",mnemonic:"Nuts ready in summer"},
+{char:"ふゆ",romaji:"fuyu",meaning:"Winter",mnemonic:"For-you winter coat"},
+{char:"あき",romaji:"aki",meaning:"Autumn",mnemonic:"A key to falling leaves"},
+{char:"はる",romaji:"haru",meaning:"Spring",mnemonic:"How-are-you this spring"},
+
+{char:"あつい",romaji:"atsui",meaning:"Hot",mnemonic:"Achoo! too hot"},
+{char:"さむい",romaji:"samui",meaning:"Cold",mnemonic:"Some-we feel cold"},
+{char:"しろい",romaji:"shiroi",meaning:"White",mnemonic:"She wears white"},
+{char:"くろい",romaji:"kuroi",meaning:"Black",mnemonic:"Cool black car"},
+
+{char:"め",romaji:"me",meaning:"Eye",mnemonic:"Look at ME eye"},
+{char:"て",romaji:"te",meaning:"Hand",mnemonic:"Ten fingers"},
+{char:"ひ",romaji:"hi",meaning:"Fire",mnemonic:"Hi is hot fire"},
+{char:"き",romaji:"ki",meaning:"Tree",mnemonic:"Key to forest trees"},
+
+{char:"いぬ",romaji:"inu",meaning:"Dog",mnemonic:"Inu cute dog"},
+{char:"ねこ",romaji:"neko",meaning:"Cat",mnemonic:"Neko nearly caught mouse"},
+{char:"やま",romaji:"yama",meaning:"Mountain",mnemonic:"Yamaha climbs mountain"},
+{char:"くるま",romaji:"kuruma",meaning:"Car",mnemonic:"Crew drives car"},
+{char:"さかな",romaji:"sakana",meaning:"Fish",mnemonic:"Sakana fish bone"},
+{char:"おちゃ",romaji:"ocha",meaning:"Tea",mnemonic:"Oh-cha tasty tea"},
+{char:"ごはん",romaji:"gohan",meaning:"Meal",mnemonic:"Go-han dinner time"},
+
+{char:"がっこう",romaji:"gakkou",meaning:"School",mnemonic:"I got to school"},
+{char:"びょういん",romaji:"byouin",meaning:"Hospital",mnemonic:"Boing to hospital bed"},
+{char:"おもしろい",romaji:"omoshiroi",meaning:"Interesting",mnemonic:"Oh-my story interesting"},
+
+{char:"はな",romaji:"hana",meaning:"Flower/Nose",mnemonic:"Hana flower on nose"},
+{char:"うみ",romaji:"umi",meaning:"Sea",mnemonic:"You-me at sea"},
+{char:"とり",romaji:"tori",meaning:"Bird",mnemonic:"Tornado of birds"},
+{char:"はし",romaji:"hashi",meaning:"Bridge/Chopsticks",mnemonic:"Eat on bridge with chopsticks"},
+
+{char:"てんき",romaji:"tenki",meaning:"Weather",mnemonic:"Ten keys change weather"},
+{char:"からだ",romaji:"karada",meaning:"Body",mnemonic:"Care for body"},
+{char:"のみもの",romaji:"nomimono",meaning:"Drink",mnemonic:"Nom-nom drink"},
+{char:"たべもの",romaji:"tabemono",meaning:"Food",mnemonic:"Table full of food"},
+
+{char:"おとうさん",romaji:"otousan",meaning:"Father",mnemonic:"Oh-to-san father"},
+{char:"おかあさん",romaji:"okaasan",meaning:"Mother",mnemonic:"Oh-ka-san mother"},
+{char:"おにいさん",romaji:"oniisan",meaning:"Older Brother",mnemonic:"Oniisan big bro"},
+{char:"おねえさん",romaji:"oneesan",meaning:"Older Sister",mnemonic:"Oneesan big sis"},
+
+{char:"なつやすみ",romaji:"natsuyasumi",meaning:"Summer Vacation",mnemonic:"Natsu break time"},
+{char:"たんじょうび",romaji:"tanjoubi",meaning:"Birthday",mnemonic:"Tan-job birthday"},
+{char:"れいぞうこ",romaji:"reizouko",meaning:"Refrigerator",mnemonic:"Ray-zoo cold fridge"},
+{char:"せんたくき",romaji:"sentakuki",meaning:"Washing Machine",mnemonic:"Send clothes to washer"},
+
+{char:"みず",romaji:"mizu",meaning:"Water",mnemonic:"Mi-zoo animals drink water"},
+{char:"たべる",romaji:"taberu",meaning:"To eat",mnemonic:"Table is for eating"},
+{char:"のむ",romaji:"nomu",meaning:"To drink",mnemonic:"Nom-nom drink it"},
+{char:"みる",romaji:"miru",meaning:"To see",mnemonic:"Mirror helps you see"},
+{char:"きく",romaji:"kiku",meaning:"To listen",mnemonic:"Kick ears to listen"},
+
+{char:"はなす",romaji:"hanasu",meaning:"To speak",mnemonic:"Hana speaks fast"},
+{char:"いく",romaji:"iku",meaning:"To go",mnemonic:"I go (iku) now"},
+{char:"くる",romaji:"kuru",meaning:"To come",mnemonic:"Come quickly (kuru)"},
+{char:"する",romaji:"suru",meaning:"To do",mnemonic:"Sure, I’ll do it"},
+{char:"ねる",romaji:"neru",meaning:"To sleep",mnemonic:"Nero sleeps"},
+
+{char:"おきる",romaji:"okiru",meaning:"To wake up",mnemonic:"OK, rise up"},
+{char:"はやい",romaji:"hayai",meaning:"Fast",mnemonic:"Hay! go fast"},
+{char:"おそい",romaji:"osoi",meaning:"Slow",mnemonic:"Oh-so slow"},
+{char:"おおきい",romaji:"ookii",meaning:"Big",mnemonic:"Ohh! big size"},
+{char:"ちいさい",romaji:"chiisai",meaning:"Small",mnemonic:"Chi! so small"},
+
+{char:"あたらしい",romaji:"atarashii",meaning:"New",mnemonic:"At last, new"},
+{char:"ふるい",romaji:"furui",meaning:"Old",mnemonic:"Fur is old"},
+{char:"いい",romaji:"ii",meaning:"Good",mnemonic:"Eee! good"},
+{char:"わるい",romaji:"warui",meaning:"Bad",mnemonic:"War is bad"},
+{char:"たかい",romaji:"takai",meaning:"Expensive",mnemonic:"Taka high price"},
+
+{char:"やすい",romaji:"yasui",meaning:"Cheap",mnemonic:"Yay! cheap"},
+{char:"ともだち",romaji:"tomodachi",meaning:"Friend",mnemonic:"Tom is my friend"},
+{char:"ひと",romaji:"hito",meaning:"Person",mnemonic:"He-to is a person"},
+{char:"こども",romaji:"kodomo",meaning:"Child",mnemonic:"Kid-o is child"},
+{char:"せんせい",romaji:"sensei",meaning:"Teacher",mnemonic:"Sensei teaches"},
+
+{char:"がくせい",romaji:"gakusei",meaning:"Student",mnemonic:"Gaku studies"},
+{char:"えき",romaji:"eki",meaning:"Station",mnemonic:"Exit at station"},
+{char:"みち",romaji:"michi",meaning:"Road",mnemonic:"Me-chi road"},
+{char:"いえ",romaji:"ie",meaning:"House",mnemonic:"I stay at home"},
+{char:"へや",romaji:"heya",meaning:"Room",mnemonic:"Hey! my room"},
+
+{char:"まど",romaji:"mado",meaning:"Window",mnemonic:"Ma-do open window"},
+{char:"ドア",romaji:"doa",meaning:"Door",mnemonic:"Door = doa"},
+{char:"いす",romaji:"isu",meaning:"Chair",mnemonic:"I sit on chair"},
+{char:"つくえ",romaji:"tsukue",meaning:"Desk",mnemonic:"Desk to work"},
+{char:"くつ",romaji:"kutsu",meaning:"Shoes",mnemonic:"Kutsu shoes on"},
+
+{char:"ぼうし",romaji:"boushi",meaning:"Hat",mnemonic:"Bow hat"},
+{char:"シャツ",romaji:"shatsu",meaning:"Shirt",mnemonic:"Shirt = shatsu"},
+{char:"ズボン",romaji:"zubon",meaning:"Pants",mnemonic:"Zoo-bon pants"},
+{char:"あめ",romaji:"ame",meaning:"Rain",mnemonic:"Ah! rain"},
+{char:"ゆき",romaji:"yuki",meaning:"Snow",mnemonic:"Yuki loves snow"},
+
+{char:"かぜ",romaji:"kaze",meaning:"Wind",mnemonic:"Crazy wind"},
+{char:"そら",romaji:"sora",meaning:"Sky",mnemonic:"So high sky"},
+{char:"たいよう",romaji:"taiyou",meaning:"Sun",mnemonic:"Taiyo bright sun"},
+{char:"つき",romaji:"tsuki",meaning:"Moon",mnemonic:"Tsuki moonlight"},
+{char:"ほし",romaji:"hoshi",meaning:"Star",mnemonic:"Hoshi shining star"},
+
+],
+
+hiragana: [
+    // A-Row
+    { char: "あ", romaji: "a", category: "A-Row", level: "N5", mnemonic: "An 'a' with a cross." },
+    { char: "い", romaji: "i", category: "A-Row", level: "N5", mnemonic: "Two 'i's standing together." },
+    { char: "う", romaji: "u", category: "A-Row", level: "N5", mnemonic: "A 'u' tipped on its side." },
+    { char: "え", romaji: "e", category: "A-Row", level: "N5", mnemonic: "An exotic bird." },
+    { char: "お", romaji: "o", category: "A-Row", level: "N5", mnemonic: "A person on a golf green." },
+
+    // Ka-Row
+    { char: "か", romaji: "ka", category: "Ka-Row", level: "N5", mnemonic: "A person doing karate." },
+    { char: "き", romaji: "ki", category: "Ka-Row", level: "N5", mnemonic: "A key to a lock." },
+    { char: "く", romaji: "ku", category: "Ka-Row", level: "N5", mnemonic: "The mouth of a cuckoo." },
+    { char: "け", romaji: "ke", category: "Ka-Row", level: "N5", mnemonic: "A keg of beer." },
+    { char: "こ", romaji: "ko", category: "Ka-Row", level: "N5", mnemonic: "Two ko-re (this) pieces." },
+
+    // Sa-Row
+    { char: "さ", romaji: "sa", category: "Sa-Row", level: "N5", mnemonic: "A samurai sword." },
+    { char: "し", romaji: "shi", category: "Sa-Row", level: "N5", mnemonic: "She has long hair." },
+    { char: "す", romaji: "su", category: "Sa-Row", level: "N5", mnemonic: "A swing looping around." },
+    { char: "せ", romaji: "sa", category: "Sa-Row", level: "N5", mnemonic: "A sunset at the coast." },
+    { char: "そ", romaji: "so", category: "Sa-Row", level: "N5", mnemonic: "A sewing needle zig-zag." },
+
+    // Ta-Row
+    { char: "た", romaji: "ta", category: "Ta-Row", level: "N5", mnemonic: "Looks like the letters T and A." },
+    { char: "ち", romaji: "chi", category: "Ta-Row", level: "N5", mnemonic: "A cheerleader." },
+    { char: "つ", romaji: "tsu", category: "Ta-Row", level: "N5", mnemonic: "A big tsunami wave." },
+    { char: "て", romaji: "te", category: "Ta-Row", level: "N5", mnemonic: "A telescope stand." },
+    { char: "と", romaji: "to", category: "Ta-Row", level: "N5", mnemonic: "A toe with a splinter." },
+
+    // Na-Row
+    { char: "な", romaji: "na", category: "Na-Row", level: "N5", mnemonic: "A nun praying at a cross." },
+    { char: "に", romaji: "ni", category: "Na-Row", level: "N5", mnemonic: "A needle and thread." },
+    { char: "ぬ", romaji: "nu", category: "Na-Row", level: "N5", mnemonic: "Noodles with a loop." },
+    { char: "ね", romaji: "ne", category: "Na-Row", level: "N5", mnemonic: "Neko (cat) with a curly tail." },
+    { char: "の", romaji: "no", category: "Na-Row", level: "N5", mnemonic: "A 'no' smoking sign circle." },
+
+    // Ha-Row
+    { char: "は", romaji: "ha", category: "Ha-Row", level: "N5", mnemonic: "A hockey stick and a ball." },
+    { char: "ひ", romaji: "hi", category: "Ha-Row", level: "N5", mnemonic: "A big wide smile: Hi!" },
+    { char: "ふ", romaji: "fu", category: "Ha-Row", level: "N5", mnemonic: "Mount Fuji." },
+    { char: "へ", romaji: "he", category: "Ha-Row", level: "N5", mnemonic: "A hill to climb." },
+    { char: "ほ", romaji: "ho", category: "Ha-Row", level: "N5", mnemonic: "A person with a hat: Ho ho ho!" },
+
+    // Ma-Row
+    { char: "ま", romaji: "ma", category: "Ma-Row", level: "N5", mnemonic: "Mama wearing a mask." },
+    { char: "み", romaji: "mi", category: "Ma-Row", level: "N5", mnemonic: "Looks like the number 21 (mi-tsu)." },
+    { char: "む", romaji: "mu", category: "Ma-Row", level: "N5", mnemonic: "A cow saying Moo!" },
+    { char: "め", romaji: "me", category: "Ma-Row", level: "N5", mnemonic: "Messy noodles (no loop)." },
+    { char: "も", romaji: "mo", category: "Ma-Row", level: "N5", mnemonic: "A hook to catch more fish." },
+
+    // Ya, Ra, Wa, N
+    { char: "や", romaji: "ya", category: "Misc", level: "N5", mnemonic: "A yak with horns." },
+    { char: "ゆ", romaji: "yu", category: "Misc", level: "N5", mnemonic: "A unique fish." },
+    { char: "よ", romaji: "yo", category: "Misc", level: "N5", mnemonic: "A yo-yo dangling." },
+    { char: "ら", romaji: "ra", category: "Misc", level: "N5", mnemonic: "A rabbit's ear." },
+    { char: "り", romaji: "ri", category: "Misc", level: "N5", mnemonic: "Two ribbons." },
+    { char: "る", romaji: "ru", category: "Misc", level: "N5", mnemonic: "A road with a loop." },
+    { char: "れ", romaji: "re", category: "Misc", level: "N5", mnemonic: "A person resting." },
+    { char: "ろ", romaji: "ro", category: "Misc", level: "N5", mnemonic: "A road (no loop)." },
+    { char: "わ", romaji: "wa", category: "Misc", level: "N5", mnemonic: "A wasp flying." },
+    { char: "を", romaji: "wo", category: "Misc", level: "N5", mnemonic: "A guy walking across a road." },
+    { char: "ん", romaji: "n", category: "Misc", level: "N5", mnemonic: "The letter 'n'." },
+
+    // --- DAKUTEN (VOICED) ---
+{ char: "が", romaji: "ga", category: "Dakuten", mnemonic: "KA is a power-hitter; the dots are the GA-ins (muscles) he made." },
+{ char: "ぎ", romaji: "gi", category: "Dakuten", mnemonic: "KI is a key; the dots are GI-ant teeth on the key." },
+{ char: "ぐ", romaji: "gu", category: "Dakuten", mnemonic: "KU is a bird's beak; the dots are GU-m stuck to it." },
+{ char: "げ", romaji: "ge", category: "Dakuten", mnemonic: "KE is a keg; the dots are the GE-ms on the side." },
+{ char: "ご", romaji: "go", category: "Dakuten", mnemonic: "KO is two worms; the dots are the GO-ld coins they found." },
+
+{ char: "ざ", romaji: "za", category: "Dakuten", mnemonic: "SA is a person sitting; the dots are the ZA-p of a mosquito." },
+{ char: "じ", romaji: "ji", category: "Dakuten", mnemonic: "SHI is a hook; the dots are the JI-ggling bait." },
+{ char: "ず", romaji: "zu", category: "Dakuten", mnemonic: "SU is a swing; the dots are the ZU-m (zoom) of the wind." },
+{ char: "ぜ", romaji: "ze", category: "Dakuten", mnemonic: "SE is a sunset; the dots are the ZE-nith of the sun." },
+{ char: "ぞ", romaji: "zo", category: "Dakuten", mnemonic: "SO is a needle; the dots are the ZO-nes of the fabric." },
+
+{ char: "だ", romaji: "da", category: "Dakuten", mnemonic: "TA is a 'TA' sign; the dots make it a DA-rk sign." },
+{ char: "ぢ", romaji: "ji", category: "Dakuten", mnemonic: "CHI is a face; the dots are JI-ant tears on the cheek." },
+{ char: "づ", romaji: "zu", category: "Dakuten", mnemonic: "TSU is a wave; the dots are the ZU-oming spray of water." },
+{ char: "で", romaji: "de", category: "Dakuten", mnemonic: "TE is a hand; the dots are DE-wdrops on the palm." },
+{ char: "ど", romaji: "do", category: "Dakuten", mnemonic: "TO is a toe with a splinter; the dots are the DO-lor (pain)." },
+
+{ char: "ば", romaji: "ba", category: "Dakuten", mnemonic: "HA is a person; the dots are a BA-ckpack they are wearing." },
+{ char: "び", romaji: "bi", category: "Dakuten", mnemonic: "HI is a smile; the dots are the BI-g dimples." },
+{ char: "ぶ", romaji: "bu", category: "Dakuten", mnemonic: "FU is a nose; the dots are the BU-bble coming out of it." },
+{ char: "べ", romaji: "be", category: "Dakuten", mnemonic: "HE is a mountain; the dots are the BE-ar climbing it." },
+{ char: "ぼ", romaji: "bo", category: "Dakuten", mnemonic: "HO is a cross; the dots are the BO-at at the altar." },
+
+// --- HANDAKUTEN (P-SOUNDS) ---
+{ char: "ぱ", romaji: "pa", category: "Handakuten", mnemonic: "HA is a person; the circle is a PA-rty hat on their head." },
+{ char: "ぴ", romaji: "pi", category: "Handakuten", mnemonic: "HI is a smile; the circle is a PI-nk nose." },
+{ char: "ぷ", romaji: "pu", category: "Handakuten", mnemonic: "FU is a nose; the circle is a PU-ff of air from a sneeze." },
+{ char: "ぺ", romaji: "pe", category: "Handakuten", mnemonic: "HE is a mountain peak; the circle is a PI-tch-black sun above it." },
+{ char: "ぽ", romaji: "po", category: "Handakuten", mnemonic: "HO is a person; the circle is a PO-p of sweat on their face." }
+    
   ],
+  
+
   katakana: [
-    { char: "ア", romaji: "a", mnemonic: "An 'A'ngle of a cliff." },
-    { char: "イ", romaji: "i", mnemonic: "An 'Ea'sel for painting." },
-    { char: "ウ", romaji: "u", mnemonic: "A cook's cap (U is for 'U'tensils)." },
-    { char: "エ", romaji: "e", mnemonic: "The girders of an 'En'gineer's bridge." },
-    { char: "オ", romaji: "o", mnemonic: "An 'O'pera singer." },
-    { char: "カ", romaji: "ka", mnemonic: "Sharp 'ka'yak paddle." },
-    { char: "キ", romaji: "ki", mnemonic: "A sharp 'ki' (key)." },
-    { char: "ク", romaji: "ku", mnemonic: "A 'Co'ok's knife." },
-    { char: "ケ", romaji: "ke", mnemonic: "A 'Ke'yboard corner." },
-    { char: "コ", romaji: "ko", mnemonic: "A 'Co'rner' of a box." },
-    { char: "サ", romaji: "sa", mnemonic: "Three 'Sa'rdines' in a can." },
-    { char: "シ", romaji: "shi", mnemonic: "A 'She' (girl) with long eyelashes." },
-    { char: "ス", romaji: "su", mnemonic: "A 'Su'per' hanger." },
-    { char: "セ", romaji: "se", mnemonic: "A 'Se'tting sun over a bench." },
-    { char: "ソ", romaji: "so", mnemonic: "A 'So'ft' needle pointing down." },
-    { char: "タ", romaji: "ta", mnemonic: "A 'Ta'dal' wave." },
-    { char: "チ", romaji: "chi", mnemonic: "A 'Chee'rleader' (like a 4)." },
-    { char: "ツ", romaji: "tsu", mnemonic: "Two 'Tsu'nami' waves." },
-    { char: "テ", romaji: "te", mnemonic: "A 'Te'levision' antenna." },
-    { char: "ト", romaji: "to", mnemonic: "A 'To'tem' pole." },
-    { char: "ナ", romaji: "na", mnemonic: "A 'Na'rrow' cross." },
-    { char: "ニ", romaji: "ni", mnemonic: "Two 'Ni'ckels' (2 lines)." },
-    { char: "ヌ", romaji: "nu", mnemonic: "A 'Noo'dle' chopstick." },
-    { char: "ネ", romaji: "ne", mnemonic: "A 'Ne'cktie'." },
-    { char: "ノ", romaji: "no", mnemonic: "A 'No'se' bridge." },
-    { char: "ハ", romaji: "ha", mnemonic: "A 'Ha't' (the top)." },
-    { char: "ヒ", romaji: "hi", mnemonic: "A 'Hee'-haw'ing donkey." },
-    { char: "フ", romaji: "fu", mnemonic: "A 'Fu'nny' flag." },
-    { char: "ヘ", romaji: "he", mnemonic: "A 'He'll' (hill)." },
-    { char: "ホ", romaji: "ho", mnemonic: "A 'Ho'ly' cross." },
-    { char: "マ", romaji: "ma", mnemonic: "A 'Ma'ma's' lap." },
-    { char: "ミ", romaji: "mi", mnemonic: "Three 'Mi'ssiles'." },
-    { char: "ム", romaji: "mu", mnemonic: "A 'Mo'o'ing cow face." },
-    { char: "メ", romaji: "me", mnemonic: "A 'Me'tal' sword (X)." },
-    { char: "モ", romaji: "mo", mnemonic: "Sharp Hiragana 'mo'." },
-    { char: "ヤ", romaji: "ya", mnemonic: "Sharp Hiragana 'ya'." },
-    { char: "ユ", romaji: "yu", mnemonic: "A 'U'nit' of shelves." },
-    { char: "ヨ", romaji: "yo", mnemonic: "A 'Yo'ga' mat folded." },
-    { char: "ラ", romaji: "ra", mnemonic: "A 'Ra'dio' with a handle." },
-    { char: "リ", romaji: "ri", mnemonic: "Two stalks of 'Ree'ds." },
-    { char: "ル", romaji: "ru", mnemonic: "Two 'Roo'ts' of a tree." },
-    { char: "レ", romaji: "re", mnemonic: "A 'Re'd' flag blowing." },
-    { char: "ロ", romaji: "ro", mnemonic: "A 'Ro'ad' block (square)." },
-    { char: "ワ", romaji: "wa", mnemonic: "A 'Wa'ter' tap." },
-    { char: "ヲ", romaji: "wo", mnemonic: "A 'Wo'lker' (walker) with a cane." },
-    { char: "ン", romaji: "n", mnemonic: "One eye 'n' a smile." }
+    // A-Row
+    { char: "ア", romaji: "a", category: "A-Row", level: "N5", mnemonic: "A sharp axe." },
+    { char: "イ", romaji: "i", category: "A-Row", level: "N5", mnemonic: "An easel." },
+    { char: "ウ", romaji: "u", category: "A-Row", level: "N5", mnemonic: "A hat over a head." },
+    { char: "エ", romaji: "e", category: "A-Row", level: "N5", mnemonic: "An elevator door." },
+    { char: "オ", romaji: "o", category: "A-Row", level: "N5", mnemonic: "An opera singer." },
+
+    // Ka-Row
+    { char: "カ", romaji: "ka", category: "Ka-Row", level: "N5", mnemonic: "Sharp karate kick." },
+    { char: "キ", romaji: "ki", category: "Ka-Row", level: "N5", mnemonic: "A sharp key." },
+    { char: "ク", romaji: "ku", category: "Ka-Row", level: "N5", mnemonic: "A cook's hat." },
+    { char: "ケ", romaji: "ke", category: "Ka-Row", level: "N5", mnemonic: "A corner of a shape." },
+    { char: "コ", romaji: "ko", category: "Ka-Row", level: "N5", mnemonic: "A corner (ko-re)." },
+
+    // Sa-Row
+    { char: "サ", romaji: "sa", category: "Sa-Row", level: "N5", mnemonic: "Two cacti in the sun." },
+    { char: "シ", romaji: "shi", category: "Sa-Row", level: "N5", mnemonic: "She (Shi) looks up." },
+    { char: "ス", romaji: "su", category: "Sa-Row", level: "N5", mnemonic: "A hanger on a suit." },
+    { char: "セ", romaji: "se", category: "Sa-Row", level: "N5", mnemonic: "A sexy leg." },
+    { char: "ソ", romaji: "so", category: "Sa-Row", level: "N5", mnemonic: "Soft (So) needle stitch down." },
+
+    // Ta-Row
+    { char: "タ", romaji: "ta", category: "Ta-Row", level: "N5", mnemonic: "A tidal wave." },
+    { char: "チ", romaji: "chi", category: "Ta-Row", level: "N5", mnemonic: "A cheerleader pom-pom." },
+    { char: "ツ", romaji: "tsu", category: "Ta-Row", level: "N5", mnemonic: "Tsunami (Tsu) splashing down." },
+    { char: "テ", romaji: "te", category: "Ta-Row", level: "N5", mnemonic: "A TV antenna." },
+    { char: "ト", romaji: "to", category: "Ta-Row", level: "N5", mnemonic: "A totem pole." },
+
+    // Na-Row
+    { char: "ナ", romaji: "na", category: "Na-Row", level: "N5", mnemonic: "A knife." },
+    { char: "ニ", romaji: "ni", category: "Na-Row", level: "N5", mnemonic: "Two (Ni) needles." },
+    { char: "ヌ", romaji: "nu", category: "Na-Row", level: "N5", mnemonic: "New (Nu) chopsticks." },
+    { char: "ネ", romaji: "ne", category: "Na-Row", level: "N5", mnemonic: "A net." },
+    { char: "ノ", romaji: "no", category: "Na-Row", level: "N5", mnemonic: "A long nose." },
+
+    // Ha-Row
+    { char: "ハ", romaji: "ha", category: "Ha-Row", level: "N5", mnemonic: "A hat shape." },
+    { char: "ヒ", romaji: "hi", category: "Ha-Row", level: "N5", mnemonic: "He (Hi) is laughing." },
+    { char: "フ", romaji: "fu", category: "Ha-Row", level: "N5", mnemonic: "A foot." },
+    { char: "ヘ", romaji: "he", category: "Ha-Row", level: "N5", mnemonic: "A hill." },
+    { char: "ホ", romaji: "ho", category: "Ha-Row", level: "N5", mnemonic: "A holy cross." },
+
+    // Ma-Row
+    { char: "マ", romaji: "ma", category: "Ma-Row", level: "N5", mnemonic: "Mama's lap." },
+    { char: "ミ", romaji: "mi", category: "Ma-Row", level: "N5", mnemonic: "Three missiles." },
+    { char: "ム", romaji: "mu", category: "Ma-Row", level: "N5", mnemonic: "Moo cow." },
+    { char: "メ", romaji: "me", category: "Ma-Row", level: "N5", mnemonic: "Metal (Me) bars crossing." },
+    { char: "モ", romaji: "mo", category: "Ma-Row", level: "N5", mnemonic: "A monitor stand." },
+
+    // Misc
+    { char: "ヤ", romaji: "ya", category: "Misc", level: "N5", mnemonic: "A yacht." },
+    { char: "ユ", romaji: "yu", category: "Misc", level: "N5", mnemonic: "You (Yu) are #1." },
+    { char: "ヨ", romaji: "yo", category: "Misc", level: "N5", mnemonic: "A yoga pose." },
+    { char: "ラ", romaji: "ra", category: "Ra-Row", level: "N5", mnemonic: "A radio antenna." },
+    { char: "リ", romaji: "ri", category: "Ra-Row", level: "N5", mnemonic: "Reeds in a river." },
+    { char: "ル", romaji: "ru", category: "Ra-Row", level: "N5", mnemonic: "Roots." },
+    { char: "レ", romaji: "re", category: "Ra-Row", level: "N5", mnemonic: "A ray of light." },
+    { char: "ロ", romaji: "ro", category: "Ra-Row", level: "N5", mnemonic: "A robot's head." },
+    { char: "ワ", romaji: "wa", category: "Misc", level: "N5", mnemonic: "Water splashing." },
+    { char: "ヲ", romaji: "wo", category: "Misc", level: "N5", mnemonic: "Walking." },
+    { char: "ン", romaji: "n", category: "Misc", level: "N5", mnemonic: "N... looking up." },
+    
   ],
   kanji: {
     n5: [
@@ -705,5 +893,7 @@ export const MASTER_DATA = {
 ],
     n2: [],
     n1: []
+    
   }
+  
 };

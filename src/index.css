@@ -348,3 +348,259 @@ body {
   color: var(--text-muted);
   font-style: italic;
 }
+.dashboard-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.dashboard-main-area {
+  flex: 3; /* Takes the main space */
+}
+
+.dashboard-sidebar {
+  flex: 1; /* Takes the empty right space */
+  min-width: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  position: sticky;
+  top: 20px;
+}
+
+.sidebar-widget { margin-bottom: 25px; }
+.sidebar-widget h4 { font-size: 0.75rem; color: #7c89ff; margin-bottom: 10px; }
+.sidebar-progress-bar { height: 6px; background: #222; border-radius: 3px; overflow: hidden; margin-bottom: 5px; }
+.sidebar-progress-fill { height: 100%; background: #7c89ff; }
+.stat-row { display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 8px; }
+
+.vocab-text {
+  font-size: 3.5rem !important; /* Makes long words slightly smaller to fit the box */
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.mnemonic-text {
+  font-size: 1.1rem;
+  color: #a0aec0;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+.modal-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  /* This ensures horizontal centering for everything inside */
+  align-items: center; 
+  /* This ensures vertical spacing is even */
+  justify-content: center; 
+  background: linear-gradient(145deg, #1a202c, #2d3748);
+  padding: 40px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Character Styling */
+.char-stage {
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-char-huge {
+  font-size: 9rem;
+  color: #fff;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.5); /* Makes it pop off the screen */
+  z-index: 2;
+}
+
+.char-shadow {
+  position: absolute;
+  bottom: 10px;
+  width: 60%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  filter: blur(15px);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Stroke Order Panel */
+.stroke-order-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the title and the box together */
+  width: 100%;
+  margin-top: 20px; /* Gives some breathing room from the character */
+}
+
+.stroke-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stroke-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #63b3ed;
+  margin: 0;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background: #63b3ed;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.stroke-frame {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  
+  /* Hard-locking size and centering the image inside */
+  width: 120px; 
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stroke-frame:hover {
+  transform: scale(1.05); /* Interactive feel */
+}
+
+.stroke-frame img {
+  width: 100%;
+  height: auto;
+  
+  /* ADD THIS: Smooth entrance for the SVG */
+  animation: svgReveal 0.4s ease-in-out;
+}
+@keyframes svgReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.9); /* Starts slightly smaller */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Overlay Fade In */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px); /* Blurs the background app */
+  animation: fadeInOverlay 0.3s ease-out;
+}
+
+/* Content Pop In */
+.animate-in {
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Button Hover Animation */
+.close-details-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.close-details-btn:hover {
+  background: #e53e3e; /* Turns red on hover to signal "close" */
+  border-color: #fc8181;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(229, 62, 62, 0.4);
+}
+
+.close-details-btn:active {
+  transform: translateY(0);
+}
+
+/* Keyframes */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 1. The Container: Use Columns instead of Grid */
+.vocab-grid {
+  column-count: 4; /* Number of columns */
+  column-gap: 20px; /* Space between columns */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 2. The Cards: Ensure they don't break across columns */
+.vocab-card {
+  break-inside: avoid; /* CRITICAL: Prevents the card from splitting */
+  display: inline-block; /* Required for column-count to work right */
+  width: 100%;
+  margin-bottom: 20px; /* Vertical space between stacked cards */
+  height: auto; 
+  min-height: 80px;
+  display: inline-block; 
+  width: 100%;
+  
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.vocab-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: rgba(99, 179, 237, 0.1);
+  border-color: #63b3ed;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Handling the Text */
+.vocab-card .char {
+  font-size: 1.8rem;
+  /* Keeps the vertical look for long words, 
+     but stays compact for short ones */
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 0 auto 10px auto;
+}
+
+.vocab-card .meaning {
+  font-size: 0.8rem;
+  color: #63b3ed;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
