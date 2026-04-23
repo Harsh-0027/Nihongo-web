@@ -140,7 +140,7 @@ hiragana: [
     { char: "さ", romaji: "sa", category: "Sa-Row", level: "N5", mnemonic: "A samurai sword." },
     { char: "し", romaji: "shi", category: "Sa-Row", level: "N5", mnemonic: "She has long hair." },
     { char: "す", romaji: "su", category: "Sa-Row", level: "N5", mnemonic: "A swing looping around." },
-    { char: "せ", romaji: "sa", category: "Sa-Row", level: "N5", mnemonic: "A sunset at the coast." },
+    { char: "せ", romaji: "se", category: "Sa-Row", level: "N5", mnemonic: "A sunset at the coast." },
     { char: "そ", romaji: "so", category: "Sa-Row", level: "N5", mnemonic: "A sewing needle zig-zag." },
 
     // Ta-Row
